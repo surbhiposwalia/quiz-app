@@ -71,6 +71,7 @@ $(document).ready(function() {
 
     $(".choice").click(function() {
         $('.next').show();
+    
         if ($(this).text() == eachQuestion.answer) {
             correct();
         } else {
@@ -113,7 +114,7 @@ $(document).ready(function() {
     function populateQuesAndAns(eachQuestion) {
         $('#question-view').text(eachQuestion.question);
         for (var i = 0; i < eachQuestion.multipleChoice.length; i++) {
-            $('.choice' + i).text(eachQuestion.multipleChoice[i]);
+            $($('.choice')[i]).text(eachQuestion.multipleChoice[i]);
         }
         quesCount += 1;
         $('#question-status').text(quesCount + " Question out of 10");
